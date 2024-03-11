@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths partner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="body hidden">
+        <div class="uerNav">
+            <button class="logbtn">Logout</button>
+        </div>
+        <div class="title-bar">
+            <h1>Math Partner</h1>
+            <button class="save-btn">SAVED SOLUTIONS</button>
+        </div>
+        <div class="calculator">
+            <div class="search">
+                <h3>Problem</h3>
+                <input type="text" class="input" placeholder="TYPE HERE ..........">
+            </div>
+            <div class="catogory">
+                <h3>Select Category</h3>
+                <select id="operation">
+                    <option value="simplify">Simplify</option>
+                    <option value="factor">Factor</option>
+                    <option value="derive">Derive</option>
+                    <option value="integrate">Integrate</option>
+                    <option value="zeroes">Find 0's</option>
+                    <option value="tangent">Find Tangent</option>
+                    <option value="area">Area Under Curve</option>
+                    <option value="cos">Cosine</option>
+                    <option value="sin">Sine</option>
+                    <option value="tan">Tangent</option>
+                    <option value="arccos">Inverse Cosine</option>
+                    <option value="arcsin">Inverse Sine</option>
+                    <option value="arctan">Inverse Tangent</option>
+                    <option value="abs">Absolute Value</option>
+                    <option value="log">Logarithm</option>
+                </select>
+            </div>
+            <div class="search-btn">
+                <i class="fa-2xl fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="current-solutions">
 
+        </div>
+        <div class="saved-solution">
+            <div class="close-div">
+                <button class="close">X</button>
+            </div>
+            <div class="solution-tab">
+
+            </div>
+        </div>
+        <div class="form-div">
+            <form class="form"> <!-- some more code is pending-->
+                <h3 class="form-title">SignIn / SignUp</h3>
+                <div class="inputs name">
+                    <label for="name">Name:</label>
+                    <input autofocus required type="text" id="name" placeholder="Enter your name...">
+                </div>
+                <div class="inputs">
+                    <label for="email">Email:</label>
+                    <input required type="email" id="email" placeholder="abc@gmail.com">
+                </div>
+                <div class="inputs">
+                    <label for="password">Password:</label>
+                    <input required type="password" id="password" placeholder="Enter your password...">
+                </div>
+                <div class="inputs">
+                    <input type="submit" id="submit" value="SignIn"></input>
+                </div>
+                <div class="inputs">
+                    <p class="olduser">Already User? <a href="#" id="login">Login here ...</a></p>
+                    <p  class="newuser hidden">New User? <a href="#" id="register">Register here ...</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="welcome-div">
+
+        </div>
+
+    </div>
+    <div class="loadercontainerdiv">
+        <div class="loadercontainer">
+            <div class="loader">
+              <div class="loader">
+                <div class="loader">
+                  <div class="loader">
+                    <div class="loader">
+                      <div class="loader"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+
+    <script src="App.js"></script>
+</body>
+</html>
