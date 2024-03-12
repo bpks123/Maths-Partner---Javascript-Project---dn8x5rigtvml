@@ -381,7 +381,7 @@ body{
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    display: none
+    /* display: none */
 }
 
 form{
@@ -460,9 +460,9 @@ form input{
     align-items: center;
 }
 
-/* .hidden{
+.hidden{
     display: none;
-} */
+}
 
 a{
     text-decoration: none;
