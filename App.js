@@ -8,7 +8,7 @@ const btn = document.querySelector(".close")
 const body = document.querySelector(".body")
 const loader = document.querySelector(".loadercontainerdiv")
 const logoutbtn = document.querySelector(".logbtn")
-
+const loadingGif=document.getElementsByClassName("loadinggif")[0]
 let savedsolution = document.querySelectorAll(".solution-div") 
 let deletebtn = document.querySelectorAll(".fa-trash-can")
 let viewmore = document.querySelector(".viewmore")
@@ -126,9 +126,9 @@ function renderUi(){
 savedBtn.addEventListener('click',()=>{
     savedSolution.innerHTML=''
     document.querySelector(".saved-solution").style.display = "block"
-    loader.classList.remove('hidden')
+    loadingGif.classList.remove('hidden')
     let timer = setTimeout(()=>{
-        loader.classList.add('hidden')
+        loadingGif.classList.add('hidden')
         renderUi()
         clearTimeout(timer)
     },1500)
@@ -160,7 +160,7 @@ function deleteOperation(){
 
 const title = document.querySelector(".form-title")
 const namediv = document.querySelector(".name")
-const name = document.querySelector("#name")
+const names = document.querySelector("#name")
 const email = document.querySelector("#email")
 const pass = document.querySelector("#password")
 const login = document.querySelector("#login")
@@ -184,7 +184,7 @@ register.addEventListener("click", (e)=>{
     submit.value = "Register"
     olduser.classList.remove("hidden")
     newuser.classList.add("hidden")
-    name.value = ""
+    names.value = ""
     email.value =""
     pass.value =""
 })
@@ -195,8 +195,36 @@ login.addEventListener("click", (e)=>{
     submit.value = "Login"
     olduser.classList.add("hidden")
     newuser.classList.remove("hidden")
-    name.value = "User"
+    names.value = "User"
     email.value =""
     pass.value =""
+    weldiv.innerHTML='Welcome User'
 })
 
+form.addEventListener("submit", ()=>{
+    formdiv.style.backgroundColor = "transparent"
+    formdiv.classList.add("hidden")
+    isUserLogin.loginstatus=true
+    isUserLogin.userName=names.value
+    localStorage.setItem("isLogin", JSON.stringify(isUserLogin))
+    names.value = ""
+    email.value =""
+    pass.value =""
+    weldiv.style.display='flex'
+    console.log('welcome')
+    console.log(isUserLogin.userName)
+    weldiv.innerHTML=`
+    <div>Welcome ${isUserLogin.userName}</div>
+    `
+    
+})
+logoutbtn.addEventListener("click", ()=>{
+    isUserLogin.loginstatus=false
+    isUserLogin.userName=''
+    localStorage.setItem("isLogin", JSON.stringify(isUserLogin))
+    formdiv.classList.remove("hidden")
+    olduser.classList.remove("hidden")
+    newuser.classList.remove("hidden")
+    title.innerHTML="Sign / SignUp"
+    localStorage.setItem('solution',[])
+})
