@@ -198,10 +198,10 @@ login.addEventListener("click", (e)=>{
     names.value = "User"
     email.value =""
     pass.value =""
-    weldiv.innerHTML='Welcome User'
 })
 
-form.addEventListener("submit", ()=>{
+form.addEventListener("submit", (e)=>{
+    e.preventDefault()
     formdiv.style.backgroundColor = "transparent"
     formdiv.classList.add("hidden")
     isUserLogin.loginstatus=true
@@ -210,12 +210,20 @@ form.addEventListener("submit", ()=>{
     names.value = ""
     email.value =""
     pass.value =""
-    weldiv.style.display='flex'
-    console.log('welcome')
+    // weldiv.style.display='flex'
+    // console.log('welcome')
     console.log(isUserLogin.userName)
-    weldiv.innerHTML=`
-    <div>Welcome ${isUserLogin.userName}</div>
-    `
+    if(isUserLogin.loginstatus){
+        weldiv.innerHTML=`
+        <h2>Welcome ${isUserLogin.userName}!</h2>
+        `
+    }
+    else{
+        weldiv.innerHTML=`
+        <h2>Welcome Guest!</h2>
+        `
+    }
+    
     
 })
 logoutbtn.addEventListener("click", ()=>{
@@ -227,4 +235,5 @@ logoutbtn.addEventListener("click", ()=>{
     newuser.classList.remove("hidden")
     title.innerHTML="Sign / SignUp"
     localStorage.setItem('solution',[])
+    weldiv.innerHTML=''
 })
